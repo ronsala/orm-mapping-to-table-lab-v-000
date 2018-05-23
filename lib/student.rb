@@ -20,6 +20,14 @@ class Student
     DB[:conn].execute(sql)
   end
 
+  def save(name, grade)
+    sql = <<-SQL
+      INSERT INTO students student(name, grade)
+      VALUES (?, ?)
+    DB[:conn].execute(sql)
+    SQL
+  end
+
   def initialize(name, grade, id=nil)
     @name = name
     @grade = grade
