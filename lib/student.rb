@@ -24,8 +24,8 @@ class Student
     sql = <<-SQL
       INSERT INTO students student(name, grade)
       VALUES (?, ?)
-    DB[:conn].execute(sql)
     SQL
+    DB[:conn].execute(sql)
   end
 
   def initialize(name, grade, id=nil)
